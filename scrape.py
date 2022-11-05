@@ -1,5 +1,4 @@
 import time
-import os
 from selenium import webdriver
 
 from selenium.webdriver.chrome.options import Options
@@ -14,6 +13,8 @@ from selenium.webdriver.support import expected_conditions as EC
 #options = Options()
 #options.headless = False
 #options.add_argument("--window-size=1920,1200")
+driverPath = os.path.abspath('chromedriver.exe')
+DRIVER_PATH = driverPath
 
 driverPath = os.path.abspath('chromedriver.exe')
 DRIVER_PATH = driverPath
