@@ -1,4 +1,5 @@
 import time
+import os
 from selenium import webdriver
 
 from selenium.webdriver.chrome.options import Options
@@ -10,8 +11,9 @@ from selenium.webdriver.common.by import By
 #options = Options()
 #options.headless = False
 #options.add_argument("--window-size=1920,1200")
+driverPath = os.path.abspath('chromedriver.exe')
+DRIVER_PATH = driverPath
 
-DRIVER_PATH = 'C:/Users/Yump0/Desktop/SCRAPER4/chromedriver.exe'
 driver = webdriver.Chrome(executable_path=DRIVER_PATH)
 driver.get('https://open.spotify.com/playlist/6C9GNbtKzpnqxCZjZ9RtSp')
 #driver.find_element(By.CLASS_NAME, 'class="Type__TypeElement-goli3j-0 dlOSsY t_yrXoUO3qGsJS4Y6iXX standalone-ellipsis-one-line')
@@ -27,7 +29,7 @@ songs = driver.find_elements(By.TAG_NAME, 'div')
 # page = driver.find_element_by_xpath('/html')
 # driver.execute_script("""arguments[0].scrollTo(0, arguments[0].scrollHeight);""", page)
 
-fileToWrite = open("C:/Users/Yump0/Desktop/scraper5/divs.txt", "w")
+fileToWrite = open("divs.txt", "w")
 i = 0
 for value in songs:
     fileToWrite.write(value.text)
